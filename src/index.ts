@@ -101,6 +101,8 @@ const taskManager = new TaskManager();
 const user1 =  userService.createUser('William' ,'william@gmail.com');
 const user2 = userService.createUser('goodman' ,'goodman@gmail.com');
 
+
+// userService.updateUser(user1.id,'Jack','jack@gmail.com');
 const task1 = taskManager.createTask('Learn Typescript');
 const task2 = taskManager.createTask('Finish Assignments');
 
@@ -109,12 +111,15 @@ taskManager.assignTask(task2.id, user2.id);
 
 taskManager.updateTask(task1.id, 'Learn Angular');
 
-taskManager.unassignTask(task2.id, user2.id);
-
-taskManager.deleteTask(task2.id);
+// taskManager.unassignTask(task2.id, user2.id);
+taskManager.deleteTask(task1.id);
 
 console.log("All Users:", userService.getAllUsers());
+
+console.log("\n");
 console.log("All Tasks:", taskManager.getAllTasks());
+
+console.log("\n");
 console.log("Tasks for William:", taskManager.getByUser(user1.id));
 console.log("Tasks for Goodman:", taskManager.getByUser(user2.id));
 
